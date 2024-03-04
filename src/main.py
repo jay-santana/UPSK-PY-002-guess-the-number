@@ -1,67 +1,66 @@
 import random
 
 # Função para jogar novamente
-def jogar_novamente():
-    resposta = input("Deseja jogar novamente? (s/n): ")
-    return resposta.lower() == 's'
+def play_again():
+    return input("\nDeseja jogar novamente? (s/n): ").lower() == 's'
+
+# Função para exibir suposições dos jogadores
+def display_guesses(player, guesses):
+    print(f"Suposições do Jogador, {player}: {guesses}")
+
+# Função para exibir a vez do jogador humano
+def player_turn():
+    print(f"\n====== {player_name}, é a sua vez! ======")
+    return int(input("Digite um número entre 1 e 100: "))
+
+# Função para exibir a vez do computador
+def computer_turn():
+    print(f"\n====== Vez do Computador! ======")
+    computer_guess = random.randint(1, 100)
+    print(f"O computador palpita: {computer_guess}")
+    return computer_guess
+    
+# Função para verificar o vencedor do jogo
+def check_winner(player_name, secret_number, guess, guesses):
+    if guess == secret_number:
+        print(f"\nParabéns, {player_name}! Você acertou! O número era: {secret_number}\n")
+        return True
+    elif guess < secret_number:
+        print(f"{player_name}, o seu palpite é menor. Tente novamente!")
+    else:
+        print(f"{player_name}, o seu palpite é maior. Tente novamente!")
+    guesses.append(guess)
+    return False
 
 # Saudação e entrada do nome do jogador
 print("************************************************************")
-nome_jogador = input(" Olá! Bem-vindo(a) ao Guess the Number!\n Por favor, digite seu nome: ")
-print(f" Olá, {nome_jogador}! Vamos testar sua habilidade em adivinhar números!")
+player_name = input("Olá! Bem-vindo(a) ao Guess the Number!\nPor favor, digite seu nome: ")
+print(f"Olá, {player_name}! Vamos testar sua habilidade em adivinhar números!")
 print("************************************************************")
 
 while True:
-  numero_aleatorio = random.randint(1, 100)
-  print(numero_aleatorio)
-
-  suposicoes_jogador = []
-  suposicoes_computador = []
-
-  while True:
-    # Vez do jogador
-    print(f"\n====== {nome_jogador}, é a sua vez! ======")
-    palpite_humano = int(input("Digite um número entre 1 e 100: "))
-    suposicoes_jogador.append(palpite_humano)
-
-    if palpite_humano == numero_aleatorio:
-        print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(f" Parabéns, {nome_jogador}!! Você acertou!")
-        print(f" O número secreto era: {numero_aleatorio}")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        break
-    elif palpite_humano < numero_aleatorio:
-        print(f"{nome_jogador}, o seu palpite é menor. Tente novamente!")
-    else:
-        print(f"{nome_jogador}, o seu palpite é maior. Tente novamente!")
+    secret_number = random.randint(1, 100)
+    print(secret_number)
     
-    # Vez do computador
-    print(f"\n====== Vez do Computador! ======")
-    palpite_computador = random.randint(1, 100)
-    suposicoes_computador.append(palpite_computador)
-   
-    print(f"O computador palpita: {palpite_computador}")
+    player_guesses = []
+    computer_guesses = []
 
-    if palpite_computador == numero_aleatorio:
-      print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-      print(f" O computador acertou o número!")
-      print(f" O número secreto era: {numero_aleatorio}")
-      print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    while True:
+        human_guess = player_turn()
+        if check_winner(player_name, secret_number, human_guess, player_guesses):
+            break
+
+        computer_guess = computer_turn()
+        if check_winner("Computador", secret_number, computer_guess, computer_guesses):
+            break
+    # Exibir suposições dos jogadores
+    display_guesses(player_name, player_guesses)
+    display_guesses("Computador", computer_guesses)
+
+    # Finalizar jogo
+    if not play_again():
+      print("\n╔════════════════════════════════════════════════════════════╗")
+      print(f"║ Obrigado por jogar, {player_name}! Esperamos que tenha se divertido. ║")
+      print("║ Até a próxima! 🕹️  🎲                                       ║")
+      print("╚════════════════════════════════════════════════════════════╝")
       break
-    elif palpite_computador < numero_aleatorio:
-      print("O palpite do computador é menor.")
-    else:
-      print("O palpite do computador é maior.")
-    
-  print("\nSuposições do jogador:", suposicoes_jogador)
-  print("Suposições do computador:", suposicoes_computador)
-
-  if not jogar_novamente():
-    print("\n╔═══════════════════════════════════╗")
-    print(f"║ Obrigado por jogar, {nome_jogador}!          ║") 
-    print("║ Esperamos que tenha se divertido. ║")
-    print("║ Até a próxima! 🕹️  🎲              ║")
-    print("╚═══════════════════════════════════╝")
-    break
-
- 
