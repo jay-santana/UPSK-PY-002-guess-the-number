@@ -14,9 +14,9 @@ def player_turn():
     return int(input("Digite um número entre 1 e 100: "))
 
 # Função para exibir a vez do computador
-def computer_turn():
+def computer_turn(low, high):
     print(f"\n====== Vez do Computador! ======")
-    computer_guess = random.randint(1, 100)
+    computer_guess = (low + high) // 2
     print(f"O computador palpita: {computer_guess}")
     return computer_guess
     
@@ -44,15 +44,23 @@ while True:
     
     player_guesses = []
     computer_guesses = []
+    low, high = 1, 100  # Intervalo inicial
 
     while True:
         human_guess = player_turn()
         if check_winner(player_name, secret_number, human_guess, player_guesses):
             break
 
-        computer_guess = computer_turn()
+        computer_guess = computer_turn(low, high)
         if check_winner("Computador", secret_number, computer_guess, computer_guesses):
             break
+        
+        # Ajustar o intervalo com base no palpite do computador
+        if computer_guess < secret_number:
+            low = computer_guess + 1
+        else:
+            high = computer_guess - 1
+
     # Exibir suposições dos jogadores
     display_guesses(player_name, player_guesses)
     display_guesses("Computador", computer_guesses)
