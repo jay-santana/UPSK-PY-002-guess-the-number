@@ -55,7 +55,7 @@ while True:
         if check_winner("Computador", secret_number, computer_guess, computer_guesses):
             break
         
-        # Ajustar o intervalo com base no palpite do computador
+        # Ajuste do intervalo com base no palpite do computador
         if computer_guess < secret_number:
             low = computer_guess + 1
         else:
