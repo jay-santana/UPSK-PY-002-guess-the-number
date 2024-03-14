@@ -1,15 +1,17 @@
 import random
 
 # Função para jogar novamente
-def play_again():
-    return input("\nDeseja jogar novamente? (s/n): ").lower() == 's'
+def play_again(user_input):
+  return user_input.lower() == 's'
 
 # Função para exibir suposições dos jogadores
 def display_guesses(player, guesses):
-    print(f"Suposições do Jogador, {player}: {guesses}")
+  output = f"Suposições do Jogador, {player}: {guesses}"
+  print(output)
+  return output
 
 # Função para exibir a vez do jogador humano
-def player_turn():
+def player_turn(player_name):
   print(f"\n====== {player_name}, é a sua vez! ======")
   return int(input("Digite um número entre 1 e 100: "))
 
@@ -49,7 +51,7 @@ if __name__ == "__main__":
     low, high = 1, 100  # Intervalo inicial
 
     while True:
-      human_guess = player_turn()
+      human_guess = player_turn(player_name)
       if check_winner(player_name, secret_number, human_guess, player_guesses):
         break
 
@@ -68,11 +70,12 @@ if __name__ == "__main__":
     display_guesses("Computador", computer_guesses)
  
   # Finalizar jogo
-    if not play_again():
-      print("\n╔════════════════════════════════════════════════════════════╗")
-      print(f"║ Obrigado por jogar, {player_name}! Esperamos que tenha se divertido. ║")
-      print("║ Até a próxima! 🕹️  🎲                                       ║")
-      print("╚════════════════════════════════════════════════════════════╝")
+    if not play_again(input("\nDeseja jogar novamente? (s/n): ")):
+      print("\n╔═══════════════════════════════════════╗")
+      print(f"  Obrigado por jogar, {player_name}!  ")
+      print("  Esperamos que tenha se divertido.     ")
+      print("  Até a próxima! 🕹️  🎲                  ")
+      print("╚═══════════════════════════════════════╝")
       break
 
 
