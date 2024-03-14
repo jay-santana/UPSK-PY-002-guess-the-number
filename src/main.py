@@ -22,8 +22,17 @@ def display_guesses(player, guesses):
 
 # Função para exibir a vez do jogador humano
 def player_turn(player_name):
-    print(f"\n====== {player_name}, é a sua vez! ======")
-    return int(input("Digite um número entre 1 e 100: "))
+    while True:
+        try:
+            guess = int(input(f"\n====== {player_name}, é a sua vez! ======\nDigite um número entre 1 e 100: "))
+            if 1 <= guess <= 100:
+                return guess
+            # Caso o usuário insira um valor fora do intervalo determinado
+            else:
+                print("Por favor, insira um número dentro do intervalo de 1 a 100.")
+        # Caso o usuário insira um valor que não pode ser convertido para um número inteiro
+        except ValueError:
+            print("Por favor, insira um número válido.")
 
 # Função para exibir a vez do computador
 def computer_turn(low, high):
