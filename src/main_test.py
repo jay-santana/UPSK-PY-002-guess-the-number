@@ -1,4 +1,4 @@
-from main import computer_turn, player_turn, play_again, display_guesses
+from main import computer_turn, player_turn, play_again, display_guesses, check_winner
 
 #Testa se a função jogar novamente retorna True quando o usuário insere 's'
 def test_play_again_yes():
@@ -32,7 +32,14 @@ def test_display_guesses():
   assert display_guesses(player_name, player_guesses) == f"Suposições do Jogador, {player_name}: {player_guesses}"
   assert display_guesses("Computador", computer_guesses) == f"Suposições do Jogador, Computador: {computer_guesses}"
 
+#Teste para a função check_winner
+def test_check_winner():
+#Testa se a função retorna True quando o palpite é igual ao número secreto
+  assert check_winner("Jogador1", 42, 42, [1, 2, 3]) == True
+#Testa se a função retorna False quando o palpite não é igual ao número secreto
+  assert check_winner("Jogador1", 42, 41, [1, 2, 3]) == False
 
-  
+
+
 # Passos para criar testes em py
 # Preparação para o teste, ação (função, click...) e afirmação da expectativa (resposta esperada)
