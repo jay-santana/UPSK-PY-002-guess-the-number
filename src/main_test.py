@@ -1,11 +1,24 @@
 from main import computer_turn, player_turn, play_again, display_guesses, check_winner
+from unittest.mock import patch
 
-#Testa se a função jogar novamente retorna True quando o usuário insere 's'
+# Testes para função jogar novamente
+# Verifica se a função retorna True quando o usuário insere 's'
 def test_play_again_yes():
-  assert play_again("s") == True
-#Testa se a função jogar novamente retorna False quando o usuário insere 'n'
+    # Simula entrada válida 's'
+    with patch('builtins.input', return_value='s'):
+        assert play_again() == True
+
+# Verifica se a função retorna False quando o usuário insere 'n'
 def test_play_again_no():
-  assert play_again("n") == False
+    # Simula entrada válida 'n'
+    with patch('builtins.input', return_value='n'):
+        assert play_again() == False
+
+# Verifica se a função solicita uma entrada válida novamente ao receber um valor inválido
+def test_play_again_invalid_input_then_yes():
+    # Simula entrada inválida 'x' e então entrada válida 's'
+    with patch('builtins.input', side_effect=['x', 's']): 
+        assert play_again() == True
 
 #Teste para função computer_turn
 def test_computer_turn():
