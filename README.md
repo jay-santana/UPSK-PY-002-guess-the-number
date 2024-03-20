@@ -49,7 +49,7 @@ _Guess the Number_ é um jogo interativo que ocorre no terminal, onde o jogador 
 **_Divirta-se jogando o Guess the Number! 🎲🎮_**
 
 <div align="center">
- <img src="./assets/demonstracao_guess_the_number.gif" width="650" alt="Demonstração animada de uma sessão do jogo" /><br>
+ <img src="./assets/demonstracao_guess_the_number.gif" alt="Demonstração animada de uma sessão do jogo" /><br>
 </div>
 
 ## 4. Guia Prático de Instalação e Uso
