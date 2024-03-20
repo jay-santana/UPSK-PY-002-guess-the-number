@@ -73,7 +73,7 @@ if __name__ == "__main__":
 
     while True:
         secret_number = random.randint(1, 100)
-        print(secret_number)
+        # print(secret_number)
         
         player_guesses = []
         computer_guesses = []
