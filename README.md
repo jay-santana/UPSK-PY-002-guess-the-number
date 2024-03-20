@@ -1,263 +1,133 @@
-# Adivinhe o Número - Guess the Number
+# Guess the Number - Python 🐍
 
 ## Índice
 
-- [1. Resumo do Projeto](#1-resumo-do-projeto)
-- [2. Considerações Gerais](#2-considerações-gerais)
-- [3. Objetivos de Aprendizagem](#3-objetivos-de-aprendizagem)
+* [1. Prefácio](#1-prefácio)
+* [2. Resumo do projeto](#2-resumo-do-projeto)
+* [3. Demonstração de uso](#3-demonstração-de-uso)
+* [4. Guia Prático de Instalação e Uso](#4-guia-prático-de-instalação-e-uso)
+* [5. Testes Unitários](#5-testes-unitários)
+* [6. Critérios Minímos de Aceitação do Projeto](#6-criterios-minimos-de-aceitação-do-projeto)
+* [7. Especificações Técnicas](#7-especificações-técnicas)
+* [8. Implementações futuras](#8-implementações-futuras)
+* [9. Desenvolvedora](#9-desenvolvedora)
 
 ---
 
 ![ADIVINHE O
 NÚMERO](https://firebasestorage.googleapis.com/v0/b/laboratoria-945ea.appspot.com/o/guess-the-number.png?alt=media)
 
-## 1. Resumo do Projeto
+## 1. Prefácio
 
-_Adivinhe o Número_ é um jogo interativo que ocorre no terminal, onde o jogador
-e o computador se revezam tentando adivinhar um número aleatório entre 1 e 100.
-Eles devem levar em consideração a tentativa anterior, se foi "muito alta" ou
-"muito baixa".
+O projeto Guess the Number é uma introdução divertida ao mundo da programação Python, especialmente focado no desenvolvimento de habilidades em lógica de programação. Desenvolvido como parte do programa prático intensivo de Python pela equipe de bootcamp da Laboratoria, este consiste em um projeto de nível 1 com objetivos de aprendizagem concretos. Ele oferece uma oportunidade valiosa para explorar os conceitos fundamentais da linguagem Python, especialmente em relação à lógica de programação.
 
-![Demonstração animada de uma sessão de
-jogo](https://firebasestorage.googleapis.com/v0/b/laboratoria-945ea.appspot.com/o/guess-the-number-demo.gif?alt=media)
+Neste projeto, os participantes têm a tarefa de criar um jogo que ocorre no terminal, onde os jogadores tentam adivinhar um número aleatório gerado pelo computador. Utilizando estruturas de controle como loops e condicionais, os desenvolvedores aprendem a aplicar a lógica de programação de maneira prática e interativa.
 
-## 2. Considerações Gerais
+## 2. Resumo do projeto
+_Guess the Number_ é um jogo interativo que ocorre no terminal, onde o jogador e o computador competem para adivinhar um número aleatório entre 1 e 100. Durante o jogo, ambos os participantes devem considerar as tentativas anteriores e se foram classificadas como "palpite maior" ou "palpite menor" para ajustar suas estratégias de adivinhação. Este jogo oferece uma experiência divertida e desafiadora, testando a habilidade de dedução do jogador e a lógica do algoritmo do computador.
 
-- Este projeto deve ser desenvolvido de maneira **individual**.
-- A estimativa de tempo para completar o projeto é de 1 a 2 Sprints.
-- Concentre-se em adquirir conhecimentos ao invés de simplesmente "terminar" o
-  projeto.
-- Tenha paciência. Não se preocupe muito com o que ainda não entende
-  completamente.
-- Seu aprendizado se desenvolverá à medida que você progride.
+### Principais Características: 
 
-### **Critérios de Aceitação Mínimos do Projeto**
+* **Geração de Número Aleatório:** O jogo implementa a geração de um número aleatório entre 1 e 100, proporcionando variedade a cada partida.
 
-- O jogador e o computador se revezarão em turnos para tentar adivinhar o
-  número.
-- Após cada tentativa, deve ser mostrado:
+* **Interação com o Jogador:** Utiliza um loop para solicitar que o jogador faça suas suposições, proporcionando uma experiência interativa.
+
+* **Comparação e Dicas:** Compara a entrada do jogador com o número secreto e fornece dicas se a suposição estiver incorreta, auxiliando o jogador a chegar mais perto da resposta correta.
+
+* **Lógica do Computador:** Implementa uma estratégia para que o computador faça suas suposições, tornando o jogo desafiador e interessante.
+
+* **Continuidade do Jogo:** Permite que o jogo continue até que o jogador ou o computador adivinhem corretamente o número, garantindo uma experiência completa de jogo.
+
+* **Registro de Suposições:** Mantém um registro das suposições feitas pelo jogador e pelo computador, proporcionando uma visão detalhada do progresso do jogo.
+
+* **Número de Tentativas:** Revela quantas tentativas o jogador precisou para adivinhar corretamente o número secreto, destacando sua eficiência e habilidade no jogo.
+
+* **Opção de Jogar Novamente:** Oferece ao jogador a opção de jogar novamente após o término do jogo, aumentando a diversão e emoção.
+
+## 3. Demonstração de Uso 
+
+**_Divirta-se jogando o Guess the Number! 🎲🎮_**
+
+<p>
+<img src="./assets/demonstracao_guess_the_number.gif" alt="Demonstração animada de uma sessão do jogo"/>
+</p>
+
+## 4. Guia Prático de Instalação e Uso
+
+### 4.1 Instalação
+
+**4.1.1. Clone o Repositório ou Baixe o Arquivo do Script:**
+* Se você estiver familiarizado com o Git, pode clonar o repositório usando o seguinte comando:
+```
+git clone https://github.com/jay-santana/UPSK-PY-002-guess-the-number.git
+```
+* Ou, se preferir, baixe diretamente o arquivo do script do jogo [aqui](https://github.com/jay-santana/UPSK-PY-002-guess-the-number?tab=readme-ov-file).
+
+**4.1.2. Certifique-se de ter o Python instalado em seu sistema:**
+* Verifique se o Python está instalado em seu sistema digitando o seguinte comando no terminal:
+```
+python --version
+```
+* Se o Python não estiver instalado, você pode baixá-lo e instalá-lo a partir do [site oficial](https://docs.pytest.org/en/8.0.x/getting-started.html#install-pytest).
+
+**4.1.3. Execute o Script:**
+* Navegue até o diretório onde você baixou/clonou o repositório usando o terminal.
+
+* Execute o script `SAP011-guess-the-number.py` digitando o seguinte comando:
+```
+python SAP011-guess-the-number.py
+```
+
+### 4.2 Uso
+**4.2.1. Siga as Instruções no Terminal para Jogar o Jogo:**
+* Uma vez que o script seja executado, siga as instruções exibidas no terminal para jogar o "Guess the Number".
+
+* Você será solicitado a inserir um nome de jogador e fazer palpites.
+
+* Continue jogando até que você ou o computador adivinhe corretamente o número secreto.
+
+## 5. Testes Unitários
+
+Para este projeto foram desenvolvidos testes unitários utilizando a biblioteca de testes PyTest e simulação de geração de números aleatórios com unittest.mock. 
+Os testes unitários realizados obtiveram uma cobertura de 100% das functions (funções).
+
+<p>
+<img src="./assets/testes_unitarios_guess_the_number.png" alt="Testes Unitários"/>
+</p>
+
+## 6. Critérios Mínimos de Aceitação do Projeto
+
+* [x] Iniciar o jogo com o jogador e o computador se revezando em turnos para tentar adivinhar o número.
+* [x] Apresentar após cada tentativa:
   * O nome do jogador (pessoa ou computador).
   * A suposição feita.
   * Uma mensagem indicando se a suposição foi muito alta, muito baixa ou
     correta.
-- O jogo terminará assim que o jogador ou o computador adivinhar o número
-  secreto. Deve ser mostrada uma mensagem de fim de jogo, assim como uma lista
-  de todas as tentativas feitas pelo jogador vencedor.
+* [x] Terminar o jogo quando o jogador ou o computador adivinhar o número secreto. 
+* [x] Exibir uma mensagem de fim de jogo. 
+* [x] Mostrar uma lista de todas as tentativas feitas pelo jogador vencedor.
 
-**_Divirta-se construindo seu jogo de adivinhação de números! 🎲🎮_**
+## 7. Especificações Técnicas
 
-- [Versão em Python](./docs/README-python.md)
-- [Versão em Java](./docs/README-java.md)
+O projeto foi desenvolvido utilizando como ferramentas e tecnologias:
 
-## 3. Objetivos de Aprendizagem
+* Python
+* PyTest
+* Unittest.mock 
+* GitHub
+* Git Bash
+* Trello
 
-Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projeto. Pense nisso para decidir sua estratégia de trabalho.
+## 8. Implementações futuras
 
-### Java
+* Criar uma "inteligência" para jogar contra o computador, utilizando uma biblioteca de
+aprendizado de máquina como scikit-learn.
+* Adicionar testes unitários para a nova "inteligência".
+* Criar uma extensão utilizando o paradigma da Programação Orientada a Objetos (OOP).
 
-- [ ] **Modificadores de acesso (public, private, protected)**
+## 9. Desenvolvedora
 
-- [ ] **Uso de condicionais**
+Jayanny Santana
 
-- [ ] **Uso de loops (Laços)**
-
-#### Tipos de dados
-
-- [ ] **Dados primitivos vs não primitivos**
-
-- [ ] **Cadeias de caracteres**
-
-- [ ] **Arrays**
-
-#### Coleções
-
-- [ ] **ArrayList**
-
-#### Testes
-
-- [ ] **JUnit**
-
-- [ ] **Mockito**
-
-### Programação Orientada a Objetos (POO)
-
-- [ ] **Classes**
-
-- [ ] **Objetos**
-
-- [ ] **Métodos**
-
-- [ ] **Atributos**
-
-- [ ] **Construtores**
-
-- [ ] **Encapsulamento**
-
-- [ ] **Abstração**
-
-- [ ] **Composição**
-
-- [ ] **Interfaces**
-
-- [ ] **Herança (super, extends, override)**
-
-- [ ] **Linguagem de Modelagem Unificada (UML, diagramas de classe)**
-
-### Python
-
-- [ ] **Variáveis (declaração, atribuição, escopo)**
-
-  <details><summary>Links</summary><p>
-
-  * [Variables in Python – Real Python (em inglês)](https://realpython.com/python-variables/)
-  * [Variables in Python - GeeksforGeeks (em inglês)](https://www.geeksforgeeks.org/python-variables/)
-</p></details>
-
-- [ ] **Uso de condicionais (if, elif, ternário)**
-
-  <details><summary>Links</summary><p>
-
-  * [Conditional Statements in Python – Real Python (em inglês)](https://realpython.com/python-conditional-statements/)
-</p></details>
-
-- [ ] **Operadores (identidade, aritméticos, comparação etc)**
-
-  <details><summary>Links</summary><p>
-
-  * [Python Operators - GeeksforGeeks (em inglês)](https://www.geeksforgeeks.org/python-operators/)
-</p></details>
-
-- [ ] **Docstrings (e sua diferença de comentários)**
-
-  <details><summary>Links</summary><p>
-
-  * [Docstrings - Python Docs (em inglês)](https://docs.python.org/3/tutorial/controlflow.html#documentation-strings)
-</p></details>
-
-- [ ] **Linting (pylint)**
-
-  <details><summary>Links</summary><p>
-
-  * [Pylint - Documentação oficial](https://pylint.pycqa.org/en/latest/)
-  * [Linting Python in Visual Studio Code - Visual Studio Code Docs (em inglês)](https://code.visualstudio.com/docs/python/linting)
-</p></details>
-
-#### Tipos de dados
-
-- [ ] **Tipos de dados primitivos (int, float, str, bool)**
-
-  <details><summary>Links</summary><p>
-
-  * [Data Types - Python Docs (em inglês)](https://docs.python.org/3/library/datatypes.html)
-  * [Data types in Python (em inglês)](https://www.educative.io/answers/data-types-in-python)
-</p></details>
-
-- [ ] **Listas (arrays)**
-
-  <details><summary>Links</summary><p>
-
-  * [Lists - Python Docs (em inglês)](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
-  * [Lists and Tuples in Python - Real Python (em inglês)](https://realpython.com/python-lists-tuples/)
-</p></details>
-
-- [ ] **Tuples**
-
-  <details><summary>Links</summary><p>
-
-  * [Tuples - Python Docs (em inglês)](https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences)
-  * [Lists and Tuples in Python - Real Python (em inglês)](https://realpython.com/python-lists-tuples/)
-</p></details>
-
-- [ ] **Dictionaries (Dicts)**
-
-  <details><summary>Links</summary><p>
-
-  * [Dictionaries - Python Docs (em inglês)](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
-  * [Dictionaries in Python - Real Python (em inglês)](https://realpython.com/python-dicts/)
-</p></details>
-
-- [ ] **Sets**
-
-  <details><summary>Links</summary><p>
-
-  * [Sets - Python Docs (em inglês)](https://docs.python.org/3/tutorial/datastructures.html#sets)
-  * [Sets in Python - Real Python (em inglês)](https://realpython.com/python-sets/)
-</p></details>
-
-#### Funções
-
-- [ ] **Conceitos básicos (parâmetros, argumentos, valores padrão, retorno)**
-
-  <details><summary>Links</summary><p>
-
-  * [Defining Functions - Python Docs (em inglês)](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
-  * [Python Functions - GeeksforGeeks (em inglês)](https://www.geeksforgeeks.org/python-functions/)
-</p></details>
-
-#### Iteração
-
-- [ ] **Uso de loops (while, for..in)**
-
-  <details><summary>Links</summary><p>
-
-  * [Loops in Python - For, While and Nested Loops - GeeksforGeeks](https://www.geeksforgeeks.org/loops-in-python/)
-  * [Loops - Learn Python - Free Interactive Python Tutorial](https://www.learnpython.org/en/Loops)
-</p></details>
-
-#### Testes em Python
-
-- [ ] **Testes unitários (unit tests, unittest, pytest)**
-
-  <details><summary>Links</summary><p>
-
-  * [unittest - Python Docs (em inglês)](https://docs.python.org/3/library/unittest.html)
-  * [pytest - Documentação oficial](https://docs.pytest.org/en/6.2.x/)
-</p></details>
-
-- [ ] **Uso de mocks (e patch)**
-
-  <details><summary>Links</summary><p>
-
-  * [unittest.mock - Python Docs (em inglês)](https://docs.python.org/3/library/unittest.mock.html)
-  * [unittest.mock - Python Docs (em inglês)](https://docs.python.org/3/library/unittest.mock.html)
-</p></details>
-
-- [ ] **Uso de fixtures**
-
-  <details><summary>Links</summary><p>
-
-  * [Fixtures do pytest - Documentação oficial](https://docs.pytest.org/en/6.2.x/fixture.html)
-</p></details>
-
-#### Modularização
-
-- [ ] **Módulos**
-
-  <details><summary>Links</summary><p>
-
-  * [Módulos - Python Docs (em inglês)](https://docs.python.org/3/tutorial/modules.html)
-</p></details>
-
-#### Gerenciamento de dependências
-
-- [ ] **pip (instalação e uso de pacotes)**
-
-  <details><summary>Links</summary><p>
-
-  * [pip - Python Docs (em inglês)](https://docs.python.org/3/installing/index.html)
-</p></details>
-
-- [ ] **Ambiente Virtual (ambientes virtuais, virtualenv)**
-
-  <details><summary>Links</summary><p>
-
-  * [venv — Creation of virtual environments — Python 3.12.2 documentation (em inglês)](https://docs.python.org/3/library/venv.html)
-  * [Python Virtual Environments: A Primer – Real Python (em inglês)](https://realpython.com/python-virtual-environments-a-primer/)
-</p></details>
-
-- [ ] **requirements.txt**
-
-  <details><summary>Links</summary><p>
-
-  * [requirements.txt - Documentação oficial](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
-</p></details>
+* GitHub: [@jay-santana](https://github.com/jay-santana)
+* Linkedin: [Jayanny Santana](https://www.linkedin.com/in/jayanny-santana/)
