@@ -5,14 +5,14 @@ def play_again(user_input=None):
     while True:
         if user_input is None:
             user_input = input("\nDeseja jogar novamente? (s/n): ").lower()
-        if user_input == 's':
+        elif user_input == 's':
             return True
         elif user_input == 'n':
             return False
         else:
-            print("Por favor, insira apenas 's' para sim ou 'n' para não.") 
+            print("Por favor, insira apenas 's' para sim ou 'n' para não.")
             # Reset para solicitar novamente a entrada do usuário
-            user_input = None 
+            user_input = None
 
 # Função para exibir suposições dos jogadores
 def display_guesses(player, guesses):
@@ -36,7 +36,7 @@ def player_turn(player_name):
 
 # Função para exibir a vez do computador
 def computer_turn(low, high):
-    print(f"\n====== Vez do Computador! ======")
+    print("\n====== Vez do Computador! ======")
     computer_guess = (low + high) // 2
     print(f"O computador palpita: {computer_guess}")
     return computer_guess
@@ -63,18 +63,18 @@ if __name__ == "__main__":
         print("************************************************************")
         player_name = input("Olá! Bem-vindo(a) ao Guess the Number!\nPor favor, digite seu nome: ")
         # Verifica se o nome não está vazio, contém apenas letras e tem pelo menos 2 caracteres
-        if player_name.strip() and player_name.isalpha() and len(player_name) >= 2:  
+        if player_name.strip() and player_name.isalpha() and len(player_name) >= 2: 
             print(f"Olá, {player_name}! Vamos testar sua habilidade em adivinhar números!")
             print("************************************************************")
             break
-        # Caso o usuário não insira um nome 
+        # Caso o usuário não insira um nome
         else:
             print("Por favor, insira um nome válido com pelo menos 2 letras.")
 
     while True:
         secret_number = random.randint(1, 100)
         # print(secret_number)
-        
+
         player_guesses = []
         computer_guesses = []
         low, high = 1, 100 # Intervalo inicial do palpite do computador
@@ -99,7 +99,7 @@ if __name__ == "__main__":
         # Exibir suposições dos jogadores
         display_guesses(player_name, player_guesses)
         display_guesses("Computador", computer_guesses)
-    
+
         # Perguntar se deseja jogar novamente e mensagem para finalizar o jogo
         if not play_again():
             print("\n╔═══════════════════════════════════════╗")
