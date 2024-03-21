@@ -61,10 +61,10 @@ if __name__ == "__main__":
     while True:
         # Saudação e entrada do nome do jogador
         print("************************************************************")
-        player_name = input("Olá! Bem-vindo(a) ao Guess the Number!\nPor favor, digite seu nome: ")
+        player_name_input = input("Olá! Bem-vindo(a) ao Guess the Number!\nPor favor, digite seu nome: ")
         # Verifica se o nome não está vazio, contém apenas letras e tem pelo menos 2 caracteres
-        if player_name.strip() and player_name.isalpha() and len(player_name) >= 2: 
-            print(f"Olá, {player_name}! Vamos testar sua habilidade em adivinhar números!")
+        if player_name_input.strip() and player_name_input.isalpha() and len(player_name_input) >= 2: 
+            print(f"Olá, {player_name_input}! Vamos testar sua habilidade em adivinhar números!")
             print("************************************************************")
             break
         # Caso o usuário não insira um nome
@@ -72,38 +72,38 @@ if __name__ == "__main__":
             print("Por favor, insira um nome válido com pelo menos 2 letras.")
 
     while True:
-        secret_number = random.randint(1, 100)
+        SECRET_NUMBER = random.randint(1, 100)
         # print(secret_number)
 
         player_guesses = []
         computer_guesses = []
-        low, high = 1, 100 # Intervalo inicial do palpite do computador
-        attempts = 0 # Inicializa o contador de tentativas
+        COMPUTER_LOW, COMPUTER_HIGH = 1, 100 # Intervalo inicial do palpite do computador
+        ATTEMPTS = 0 # Inicializa o contador de tentativas
 
         while True:
-            attempts += 1  # Incrementa o número de tentativas
-            human_guess = player_turn(player_name)
-            if check_winner(player_name, secret_number, human_guess, player_guesses, attempts):
+            ATTEMPTS += 1  # Incrementa o número de tentativas
+            human_guess = player_turn(player_name_input)
+            if check_winner(player_name_input, SECRET_NUMBER, human_guess, player_guesses, ATTEMPTS):
                 break
 
-            computer_guess = computer_turn(low, high)
-            if check_winner("Computador", secret_number, computer_guess, computer_guesses, attempts):
+            COMPUTER_GUESS = computer_turn(COMPUTER_LOW, COMPUTER_HIGH)
+            if check_winner("Computador", SECRET_NUMBER, COMPUTER_GUESS, computer_guesses, ATTEMPTS):
                 break
                 
             # Ajuste do intervalo com base no palpite do computador
-            if computer_guess < secret_number:
-                low = computer_guess + 1
+            if COMPUTER_GUESS < SECRET_NUMBER:
+                COMPUTER_LOW = COMPUTER_GUESS + 1
             else:
-                high = computer_guess - 1
+                COMPUTER_HIGH = COMPUTER_GUESS - 1
 
         # Exibir suposições dos jogadores
-        display_guesses(player_name, player_guesses)
+        display_guesses(player_name_input, player_guesses)
         display_guesses("Computador", computer_guesses)
 
         # Perguntar se deseja jogar novamente e mensagem para finalizar o jogo
         if not play_again():
             print("\n╔═══════════════════════════════════════╗")
-            print(f"  Obrigado por jogar, {player_name}!  ")
+            print(f"  Obrigado por jogar, {player_name_input}!  ")
             print("  Esperamos que tenha se divertido.     ")
             print("  Até a próxima! 🕹️  🎲                  ")
             print("╚═══════════════════════════════════════╝")
