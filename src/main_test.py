@@ -1,4 +1,4 @@
-from main import computer_turn, player_turn, play_again, display_guesses, check_winner
+from main_module import computer_turn, player_turn, play_again, display_guesses, check_winner
 from unittest.mock import patch
 
 # Testes para função jogar novamente
