@@ -2,7 +2,7 @@
 Este módulo contém testes para as funções do seu programa principal.
 """
 from unittest.mock import patch
-from main_module import computer_turn, player_turn, play_again, display_guesses, check_winner
+from guess_the_number import computer_turn, player_turn, play_again, display_guesses, check_winner
 
 # Testes para função play_again
 def test_play_again_yes():
