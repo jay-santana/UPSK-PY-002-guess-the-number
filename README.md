@@ -19,7 +19,7 @@ NÚMERO](https://firebasestorage.googleapis.com/v0/b/laboratoria-945ea.appspot.c
 
 ## 1. Prefácio
 
-O projeto Guess the Number é uma introdução divertida ao mundo da programação Python, especialmente focado no desenvolvimento de habilidades em lógica de programação. Desenvolvido como parte do programa prático intensivo de Python pela equipe de bootcamp da Laboratoria, este consiste em um projeto de nível 1 com objetivos de aprendizagem concretos. Ele oferece uma oportunidade valiosa para explorar os conceitos fundamentais da linguagem Python, especialmente em relação à lógica de programação.
+O projeto Guess the Number é uma introdução divertida ao mundo da programação Python, especialmente focado no desenvolvimento de habilidades em lógica de programação. Desenvolvido como parte do programa prático intensivo de Python da Laboratoria, este consiste em um projeto de nível 1 com objetivos de aprendizagem concretos. Ele oferece uma oportunidade valiosa para explorar os conceitos fundamentais da linguagem Python, especialmente em relação à lógica de programação.
 
 Neste projeto, os participantes têm a tarefa de criar um jogo que ocorre no terminal, onde os jogadores tentam adivinhar um número aleatório gerado pelo computador. Utilizando estruturas de controle como loops e condicionais, os desenvolvedores aprendem a aplicar a lógica de programação de maneira prática e interativa.
 
